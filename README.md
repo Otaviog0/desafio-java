@@ -12,15 +12,11 @@ spring.datasource.username=usuario do banco de dados
 spring.datasource.password=senha
 spring.jpa.hibernate.ddl-auto=informação de criação do hibernate create,update, drop-create
 
-build
 api.geolocation.key=key da api de geolocalização
 {api.geolocation.url=http://www.mapquestapi.com/geocoding/v1/reverse
 
+build
 ./gradlew bootRun --args='--api.geolocation.url=http://www.mapquestapi.com/geocoding/v1/reverse? --api.geolocation.key=suakey --spring.datasource.url=jdbc:mysql://localhost:3306/desafio --spring.datasource.username=root --spring.datasource.password=root --spring.jpa.hibernate.ddl-auto=update'
-
-
-
-
 
 ### Pendencias
 
