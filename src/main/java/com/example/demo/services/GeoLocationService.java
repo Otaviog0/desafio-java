@@ -13,10 +13,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class GeoLocationService {
 
     @Value("${api.geolocation.key}") private String geolocationKey;
+    @Value("${api.geolocation.url}") private String geolocationUrl;
 
     @CacheEvict(value="enderecos", allEntries=true)
     public Endereco getGeoLocation(String latitude, String longitude) {
-        String url = "http://www.mapquestapi.com/geocoding/v1/reverse?" +
+        String url = geolocationUrl +
                 "key="+geolocationKey+"&location="+latitude+","+longitude+"&includeRoadMetadata=true&includeNearestIntersection=true&outFormat";
 
         WebClient webClient = WebClient.create(url);

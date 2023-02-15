@@ -19,6 +19,7 @@ public class DenunciaService {
         denuncia.setId(null);
         Endereco endereco = geoLocationService.getGeoLocation(denuncia.getLatitude(), denuncia.getLongitude());
         denuncia.setEndereco(endereco);
+        System.out.println(">>>>>>>>>>>>>" + denuncia.toString());
         if (denuncia.getEndereco().getLogradouro() != null) {
           return repo.save(denuncia);
         }
